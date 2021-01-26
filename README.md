@@ -1,4 +1,5 @@
 # addlicense
+> This is my fork of [google/addlicense](https://github.com/google/addlicense) with support for the GPLv3 license.
 
 The program ensures source code files have copyright license headers
 by scanning directory patterns recursively.
