@@ -49,7 +49,7 @@ Flags:
 
 var (
 	holder    = flag.String("c", "Google LLC", "copyright holder")
-	license   = flag.String("l", "apache", "license type: apache, bsd, mit, mpl")
+	license   = flag.String("l", "apache", "license type: apache, bsd, mit, mpl, gpl3")
 	licensef  = flag.String("f", "", "license file")
 	year      = flag.String("y", fmt.Sprint(time.Now().Year()), "copyright year(s)")
 	verbose   = flag.Bool("v", false, "verbose mode: print the name of the files that are modified")
@@ -272,6 +272,7 @@ func hashBang(b []byte) []byte {
 
 // go generate: ^// Code generated .* DO NOT EDIT\.$
 var goGenerated = regexp.MustCompile(`(?m)^.{1,2} Code generated .* DO NOT EDIT\.$`)
+
 // cargo raze: ^DO NOT EDIT! Replaced on runs of cargo-raze$
 var cargoRazeGenerated = regexp.MustCompile(`(?m)^DO NOT EDIT! Replaced on runs of cargo-raze$`)
 
