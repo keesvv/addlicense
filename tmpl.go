@@ -34,8 +34,9 @@ func init() {
 }
 
 type copyrightData struct {
-	Year   string
-	Holder string
+	Year    string
+	Holder  string
+	Project string
 }
 
 // prefix will execute a license template t with data d
@@ -101,7 +102,7 @@ const tmplMPL = `This Source Code Form is subject to the terms of the Mozilla Pu
 License, v. 2.0. If a copy of the MPL was not distributed with this
 file, You can obtain one at https://mozilla.org/MPL/2.0/.`
 
-const tmplGPL3 = `// TODO: Project
+const tmplGPL3 = `{{.Project}}
 Copyright (C) {{.Year}}  {{.Holder}}
 
 This program is free software: you can redistribute it and/or modify

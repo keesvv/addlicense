@@ -52,6 +52,7 @@ var (
 	license   = flag.String("l", "apache", "license type: apache, bsd, mit, mpl, gpl3")
 	licensef  = flag.String("f", "", "license file")
 	year      = flag.String("y", fmt.Sprint(time.Now().Year()), "copyright year(s)")
+	project   = flag.String("p", "", "the project name (for gpl3 only)")
 	verbose   = flag.Bool("v", false, "verbose mode: print the name of the files that are modified")
 	checkonly = flag.Bool("check", false, "check only mode: verify presence of license headers and exit with non-zero code if missing")
 )
@@ -68,8 +69,9 @@ func main() {
 	}
 
 	data := &copyrightData{
-		Year:   *year,
-		Holder: *holder,
+		Year:    *year,
+		Holder:  *holder,
+		Project: *project,
 	}
 
 	var t *template.Template
